@@ -26,13 +26,20 @@ jobs:
                    -scheme AkliRadio \
                    -sdk iphoneos \
                    -configuration Release \
+                   -derivedDataPath build \
                    CODE_SIGN_IDENTITY="" \
                    CODE_SIGNING_REQUIRED=NO \
                    CODE_SIGNING_ALLOWED=NO \
                    clean build
     
+    - name: List build output
+      run: |
+        echo "=== Build directory contents ==="
+        find build -name "*.app" -type d
+    
     - name: Archive artifacts
       uses: actions/upload-artifact@v4
       with:
         name: AkliRadio-iOS
-        path: build/Release-iphoneos/AkliRadio.app
+        path: build/Build/Products/Release-iphoneos/AkliRadio.app
+
