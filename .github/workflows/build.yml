@@ -21,7 +21,8 @@ jobs:
         xcode-version: latest-stable
     
     - name: Build iOS app
-      run: |
+      working-directory: ${{ github.workspace }}
+      run: |   
         xcodebuild -project AkliRadio.xcodeproj \
                    -scheme AkliRadio \
                    -sdk iphoneos \
