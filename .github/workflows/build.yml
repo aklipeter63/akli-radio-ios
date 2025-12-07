@@ -21,8 +21,7 @@ jobs:
         xcode-version: latest-stable
     
     - name: Build iOS app
-      working-directory: ${{ github.workspace }}
-      run: |   
+      run: |
         xcodebuild -project AkliRadio.xcodeproj \
                    -scheme AkliRadio \
                    -sdk iphoneos \
@@ -30,11 +29,17 @@ jobs:
                    CODE_SIGN_IDENTITY="" \
                    CODE_SIGNING_REQUIRED=NO \
                    CODE_SIGNING_ALLOWED=NO \
-                   clean build
-        working-directory: ./AkliRadio    
+                   clean build \
+                   -derivedDataPath build
+
+    - name: List build directory
+      run: |
+        echo "Listing contents of the build directory:"
+        ls -R build
+
     - name: Archive artifacts
       uses: actions/upload-artifact@v4
       with:
         name: AkliRadio-iOS
-        path: build/Release-iphoneos/AkliRadio.app
+        path: build/Build/Products/Release-iphoneos/AkliRadio.app
 
