@@ -29,17 +29,10 @@ jobs:
                    CODE_SIGN_IDENTITY="" \
                    CODE_SIGNING_REQUIRED=NO \
                    CODE_SIGNING_ALLOWED=NO \
-                   clean build \
-                   -derivedDataPath build
-
-    - name: List build directory
-      run: |
-        echo "Listing contents of the build directory:"
-        ls -R build
-
+                   clean build
+    
     - name: Archive artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         name: AkliRadio-iOS
-        path: build/Build/Products/Release-iphoneos/AkliRadio.app
-
+        path: build/Release-iphoneos/AkliRadio.app
