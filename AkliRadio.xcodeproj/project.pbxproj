@@ -13,6 +13,7 @@
 		{isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AkliRadio.app; 
 		sourceTree = BUILT_PRODUCTS_DIR; }; A10008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = 
 		text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A10017 /* AkliRadio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AkliRadio.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */ /* Begin PBXFrameworksBuildPhase section */ A10009 /* Frameworks */ = { isa = 
 			PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = ( ); runOnlyForDeploymentPostprocessing 
 			= 0;
@@ -22,7 +23,7 @@
 			); sourceTree = "<group>";
 		};
 		A1000B /* AkliRadio */ = { isa = PBXGroup; children = ( A10002 /* AkliRadioApp.swift */, A10004 /* 
-				ContentView.swift */, A10006 /* CarPlaySceneDelegate.swift */, A10008 /* Info.plist */,
+				ContentView.swift */, A10006 /* CarPlaySceneDelegate.swift */, A10008 /* Info.plist */,A10017 /* AkliRadio.entitlements */,
 			); path = AkliRadio; sourceTree = "<group>";
 		};
 		A1000C /* Products */ = { isa = PBXGroup; children = ( A10007 /* AkliRadio.app */, ); name = Products; 
